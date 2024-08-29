@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import sgMail from "@sendgrid/mail";
+// import sgMail from "@sendgrid/mail";
 // would normally come from an environment configuration
 const myFakeApiKey = "fakeKey";
 const fromEmail = "test@example.com";
@@ -11,6 +11,10 @@ export class SendmailService {
   constructor() {}
 
   sendmail(email: string) {
+    return true;
+
+    // commented out as I ran into a library dependancy conflict
+    /*
     sgMail.setApiKey(myFakeApiKey);
     const msg = {
       to: email, // Change to your recipient
@@ -27,5 +31,7 @@ export class SendmailService {
       .catch((error) => {
         console.error(error);
       });
+
+      */
   }
 }
