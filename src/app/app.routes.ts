@@ -38,6 +38,17 @@ export const routes: Routes = [
     loadChildren: () => import("./features/profile/profile.routes"),
   },
   {
+    path: "newsletter",
+
+    children: [
+      {
+        path: "sign-up/:username",
+        loadComponent: () =>
+          import("./features/newsletter/pages/sign-up/sign-up.component"),
+      },
+    ],
+  },
+  {
     path: "editor",
     children: [
       {
