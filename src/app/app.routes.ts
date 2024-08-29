@@ -28,6 +28,12 @@ export const routes: Routes = [
     canActivate: [() => inject(UserService).isAuthenticated],
   },
   {
+    path: "subscribers",
+    loadComponent: () =>
+      import("./features/newsletter/pages/subscribers/subscribers.component"),
+    canActivate: [() => inject(UserService).isAuthenticated],
+  },
+  {
     path: "profile",
     loadChildren: () => import("./features/profile/profile.routes"),
   },
