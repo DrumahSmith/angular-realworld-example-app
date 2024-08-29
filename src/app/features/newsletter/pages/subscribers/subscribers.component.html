@@ -15,7 +15,19 @@
 
         <div class="list-group">
           @for (subscriber of subscribers; track $index) {
-            <p>{{ subscriber.email }}</p>
+            <div class="list-group-item">
+              <div class="row">
+                <p style="margin: 0; display: inline" class="col-9">
+                  {{ subscriber.email }}
+                </p>
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  (click)="deleteSubscriber(subscriber.email)"
+                >
+                  <i class="ion-trash-a"></i> Delete
+                </button>
+              </div>
+            </div>
           }
         </div>
       </div>

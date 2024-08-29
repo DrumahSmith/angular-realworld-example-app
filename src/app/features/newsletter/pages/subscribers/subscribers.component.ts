@@ -25,4 +25,12 @@ export default class SubscribersComponent implements OnInit {
       this.subscribers = subscribers;
     });
   }
+
+  public deleteSubscriber(email: string) {
+    this.subscribersService.deleteSubscriber(email);
+    // depending on resources we will call for the latest data from the server,
+    // if requests are limited then we will work with the local copy
+    // with some form of cached time before refering back to the server
+    this.getSubscribers();
+  }
 }
