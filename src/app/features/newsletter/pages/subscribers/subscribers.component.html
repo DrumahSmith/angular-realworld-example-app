@@ -9,14 +9,15 @@
   <div class="container page">
     <div class="row">
       <div class="col-md-9">
-        <div class="feed-toggle">content</div>
+        <div class="feed-toggle">
+          <h1>Newsletter Subscribers</h1>
+        </div>
 
-        <ul>
-          <li>item 1</li>
-          <li>item 2</li>
-          <li>item 3</li>
-          <li>item 4</li>
-        </ul>
+        <div class="list-group">
+          @for (subscriber of subscribers; track $index) {
+            <p>{{ subscriber.email }}</p>
+          }
+        </div>
       </div>
     </div>
   </div>
