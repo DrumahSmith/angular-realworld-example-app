@@ -14,6 +14,7 @@ import { ProfileService } from "../../services/profile.service";
 import { AsyncPipe, NgIf } from "@angular/common";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FollowButtonComponent } from "../../components/follow-button.component";
+import { SubscribeButtonComponent } from "src/app/features/newsletter/components/subscribe.component";
 
 @Component({
   selector: "app-profile-page",
@@ -26,6 +27,7 @@ import { FollowButtonComponent } from "../../components/follow-button.component"
     RouterLinkActive,
     RouterOutlet,
     FollowButtonComponent,
+    SubscribeButtonComponent,
   ],
   standalone: true,
 })
