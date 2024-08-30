@@ -15,9 +15,11 @@
 
         <div class="list-group">
           @for (subscriber of subscribers; track $index) {
-            <div class="list-group-item">
-              <div class="row">
-                <p style="margin: 0; display: inline" class="col-9">
+            <div
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="d-flex w-100 justify-content-between">
+                <p class="d-inline">
                   {{ subscriber.email }}
                 </p>
                 <button
@@ -28,6 +30,8 @@
                 </button>
               </div>
             </div>
+          } @empty {
+            <div class="list-group-item">There are no subscibers yet</div>
           }
         </div>
       </div>
